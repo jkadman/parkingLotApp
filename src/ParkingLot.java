@@ -3,8 +3,6 @@ import java.util.ArrayList;
 
 public class ParkingLot {
     String parkingLotId;
-//    int nfloors;
-//    int noOfSlotsPerFlr;
     List<List<Slot>> slots;
 
     // parking lot constructor
