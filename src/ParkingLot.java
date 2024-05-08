@@ -96,4 +96,14 @@ public class ParkingLot {
             }
         }
     }
+
+    void displayOccupiedSlots(String type) {
+        for (int i = 0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                Slot slot = slots.get(i).get(j);
+                if (slot.vehicle != null && slot.type.equals(type))
+                    System.out.println("The parking spot one floor " + (i+1) + " and spot number " + (j+1) + " is occupied" );
+            }
+        }
+    }
 }
