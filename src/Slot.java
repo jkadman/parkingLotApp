@@ -1,3 +1,5 @@
+
+
 public class Slot {
     String type;
     Vehicle vehicle;
@@ -8,4 +10,6 @@ public class Slot {
         this.vehicle = null;
         this.ticketId = null;
     }
+
+
 }
