@@ -99,8 +99,11 @@ public class ParkingLot {
         for (int i = 0; i < slots.size(); i++) {
             for (int j = 0; j < slots.get(i).size(); j++) {
                 Slot slot = slots.get(i).get(j);
-                if (slot.vehicle != null && slot.type.equals(type))
-                    System.out.println("The parking spot one floor " + (i+1) + " and spot number " + (j+1) + " is occupied" );
+                if (slot.vehicle != null && slot.type.equals(type)) {
+                    System.out.println("Spot number " + (j + 1) + " on floor number " + (i + 1) + " is occupied");
+                } else {
+                    System.out.println("Spot number " + (j+1) + " on floor number " + (i + 1) + " is available");
+                }
             }
         }
     }
