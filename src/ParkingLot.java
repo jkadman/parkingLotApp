@@ -70,37 +70,30 @@ public class ParkingLot {
                     Slot slot = slots.get(i).get(j);
                     slot.vehicle = null;
                     slot.ticketId = null;
-                    System.out.println("Unparked Vehicle");
+                    System.out.println("Your vehicle is now ready");
                 }
             }
         }
     }
-    // getter for parking lot id
-//    public String getId() {
-//        return parkingLotId;
-//    }
-//
-//    //getter for number of parking stalls per floor
-//    public int getNoOfSlotsPerFlr() {
-//        return noOfSlotsPerFlr;
-//
-//    }
-//
-//    // getter for number of floors
-//    public int getNfloors() {
-//        return nfloors;
-//    }
 
-//    slots = new ArrayList<>();
-//        for (int i = 0; i < nfloors; i++) {
-//        slots.add(new ArrayList<>());
-//        List<Slot> floorSlots = slots.get(i);
-//        floorSlots.add(new Slot("truck"));
-//        floorSlots.add(new Slot("bike"));
-//        floorSlots.add(new Slot("bike"));
-//
-//        for (int j = 3; j < noOfSlotsPerFlr; j++) {
-//            slots.get(i).add(new Slot("car"));
-//        }
-//    }
+    int getNoOfOpenSlots(String type) {
+        int count = 0;
+        for (List<Slot> floor: slots) {
+            for (Slot slot : floor) {
+                if (slot.vehicle == null && slot.type.equals(type)) count++;
+            }
+        }
+        return count;
+    }
+
+    void displayOpenSlots(String type) {
+        for (int i=0; i < slots.size(); i++) {
+            for (int j = 0; j < slots.get(i).size(); j++) {
+                Slot slot = slots.get(i).get(j);
+                if (slot.vehicle == null && slot.type.equals(type)) {
+                    System.out.println("On floor " + (i+1) + " slot " + (j+1) + " is open");
+                }
+            }
+        }
+    }
 }
